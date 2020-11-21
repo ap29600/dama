@@ -45,6 +45,13 @@ You can skip this part if you do not want to use the default menus and want to p
 
 The second command will install the script as an executable and provide a desktop entry.
 
+## Looks
+
+The appearance of the program is determined by the theme and how `yad` handles it, here's how it looks
+with the adwaita theme.
+
+![](screenshot.jpg)
+
 ## writing your own pages
 
 Any executable file in the root of your `dama` folder will be interpreted as a page to 
