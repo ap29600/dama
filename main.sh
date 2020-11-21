@@ -4,25 +4,21 @@
 KEY=12345
 
 { [ -s "$XDG_CONFIG_HOME" ] && \
-    export DAMA_CONFIG_DIR=$XDG_CONFIG_HOME/dama; } ||\
-    export DAMA_CONFIG_DIR=$HOME/.config/dama
+    MENU_CONFIG_DIR=$XDG_CONFIG_HOME/yad-menu; } ||\
+    MENU_CONFIG_DIR=$HOME/.config/yad-menu
 
-# if folder does not exist, warn the user
-[ -d "$DAMA_CONFIG_DIR" ] || {
-    echo "No configuration directory found" | \
-    yad --text-info
-    exit
-}
+# if folder does not exist, create it
+[ -d "$MENU_CONFIG_DIR" ] || mkdir $MENU_CONFIG_DIR -p || exit 1
 
 
 TABLIST=""
 declare -i TABNUM=1
 # search for executables in the config directory
-for module in $(find $DAMA_CONFIG_DIR -maxdepth 1 -executable -type f )
+for module in $(find $MENU_CONFIG_DIR -maxdepth 1 -executable -type f )
 do
     # strip out the path and extension, add a tab to the list
     TABLIST+="--tab="`echo $module | sed 's/^.*\///; s/\.[^.]*$//'`" "
-    $module $KEY $TABNUM&>/dev/null & # discard output from the tabs
+    $module $KEY $TABNUM&
     TABNUM+=1
 done
 
