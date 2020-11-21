@@ -50,5 +50,7 @@ The second command will install the script as an executable and provide a deskto
 Any executable file in the root of your `dama` folder will be interpreted as a page to 
 be added to the menu. Such an executable must pass over the first argument it takes to the
 `--plug` argument of the yad instance it spawns, and the second to the `--tabnum` argument.
+The name of the corresponding tab will be equal to the executable's name, minus the extension
+(for example `$DAMA_CONFIG_DIR/brightness.sh` results in a tabname of `brightness`).
 Your script may call other executables in the `dama` directory, but these cannot be in the top 
 level to avoid being called by the main executable.
