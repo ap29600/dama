@@ -11,6 +11,23 @@ a way to launch some dialogs tied together in a tabbed window.
 
 The individual dialogs are not necessarily a part of `DAMA`, although a few ship with it.
 
+## Dependencies
+
+only `yad` is needed, but the example provided uses `xbacklight` as a backend.
+
+if you are on an Arch-based distribuition:
+
+~~~
+sudo pacman -S yad
+~~~
+
+if you are on a Debian-based distribution:
+
+~~~
+sudo apt install yad
+~~~
+
+
 ## Installation
 
 To install `DAMA`, simply run in a terminal:
