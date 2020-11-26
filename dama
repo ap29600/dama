@@ -26,8 +26,10 @@ do
     TABNUM+=1
 done
 
- yad --notebook \
-     --tab-pos=left \
+yad --notebook \
+    --tab-pos=left \
     --key=$KEY \
     --title="Settings" \
     $TABLIST
+
+ipcrm -M 12345

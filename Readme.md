@@ -61,3 +61,16 @@ The name of the corresponding tab will be equal to the executable's name, minus 
 (for example `$DAMA_CONFIG_DIR/brightness.sh` results in a tabname of `brightness`).
 Your script may call other executables in the `dama` directory, but these cannot be in the top 
 level to avoid being called by the main executable.
+
+## Future plans / Unexpected findings
+
+Unfortunately, I have discovered a few limitations that will not allow the project to reach the target
+I had set for it, and they mostly have to do with how yad handles the notebook dialogs.
+
+As it stands, YAD relies on the xembed protocol to achieve multiple dialogs in a single window, meaning
+that good wayland support is not to be taken for granted. Since one of the main aims of this project is
+to be as independent of the desktop as possible, yad is definitely not the best foundation to build it on.
+
+Additionally, I have noticed that nesting panes and tabs also creates segfaults; I have opened an issue to 
+check that this is not a problem on my end, but at this point I am pretty sure I will need to think of a
+different approach. This means that I will probably build the whole thing in either python, C or Rust.
