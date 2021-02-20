@@ -1,6 +1,11 @@
 # Dama
 ![](Icon.png)
 
+## Warning
+
+For the reasons listed in the last section of this README, the project is abandoned in favor of its 
+successor, [dama-rs](https://github.com/ap29600/dama-rs).
+
 ## Desktop Agnostic Menu Aggregate
 
 This program aims to be a hackable, easy to use menu that can be paired to 
@@ -73,4 +78,6 @@ to be as independent of the desktop as possible, yad is definitely not the best 
 
 Additionally, I have noticed that nesting panes and tabs also creates segfaults; I have opened an issue to 
 check that this is not a problem on my end, but at this point I am pretty sure I will need to think of a
-different approach. This means that I will probably build the whole thing in either python, C or Rust.
+different approach. 
+I have decided to rebuild the project in rust, partly as a learning experience. 
+It is available [here](https://github.com/ap29600/dama-rs).
