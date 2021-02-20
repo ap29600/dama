@@ -76,8 +76,7 @@ As it stands, YAD relies on the xembed protocol to achieve multiple dialogs in a
 that good wayland support is not to be taken for granted. Since one of the main aims of this project is
 to be as independent of the desktop as possible, yad is definitely not the best foundation to build it on.
 
-Additionally, I have noticed that nesting panes and tabs also creates segfaults; I have opened an issue to 
-check that this is not a problem on my end, but at this point I am pretty sure I will need to think of a
-different approach. 
+Additionally, I have noticed that nesting panes and tabs also creates segfaults.
+
 I have decided to rebuild the project in rust, partly as a learning experience. 
-It is available [here](https://github.com/ap29600/dama-rs).
+the new repo is available [here](https://github.com/ap29600/dama-rs).
